@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng tiền thưởng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 50px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        table, th, td {
+            border: 2px solid #000;
+        }
+        th {
+            background-color: #d3d3d3;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        td {
+            padding: 12px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .loai-column {
+            text-align: left;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        .amount-column {
+            text-align: right;
+            padding-right: 20px;
+        }
+        .formula-section {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .formula-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .formula {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 18px;
+            justify-content: center;
+        }
+        .formula-item {
+            margin: 0 15px;
+        }
+        .subscript {
+            font-size: 12px;
+            vertical-align: sub;
+        }
+        .superscript {
+            font-size: 12px;
+            vertical-align: super;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BẢNG TIỀN THƯỞNG</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Loại</th>
+                    <th>Tiền thưởng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="loai-column">Giỏi</td>
+                    <td class="amount-column">300000</td>
+                </tr>
+                <tr>
+                    <td class="loai-column">Khá</td>
+                    <td class="amount-column">100000</td>
+                </tr>
+                <tr>
+                    <td class="loai-column">TB</td>
+                    <td class="amount-column">50000</td>
+                </tr>
+                <tr>
+                    <td class="loai-column">Yếu</td>
+                    <td class="amount-column">0</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="formula-section">
+            <h3>CÔNG THỨC</h3>
+            
+            <div class="formula">
+                <span class="formula-item">H<span class="subscript">2</span>O</span>
+            </div>
+            
+            <div class="formula">
+                <span class="formula-item">O<span class="superscript">o</span>C</span>
+                <span class="formula-item">H<span class="subscript">2</span>SO<span class="subscript">4</span></span>
+            </div>
+            
+            <div class="formula">
+                <span class="formula-item">(A+B)<span class="superscript">3</span></span>
+                <span class="formula-item">NH<span class="subscript">3</span>...</span>
+            </div>
+            
+            <div class="formula" style="margin-top: 25px;">
+                <span class="formula-item">A<span class="superscript">2</span> + B<span class="superscript">2</span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

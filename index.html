@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML - Thiết kế Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #3a3a3a 50%, #2d2d2d 75%, #1a1a1a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: 
+                linear-gradient(rgba(100, 100, 100, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 100, 100, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(41, 128, 185, 0.03) 0%, transparent 50%);
+            animation: radar-pulse 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes radar-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, rgba(52, 73, 94, 0.4), rgba(44, 62, 80, 0.6));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(127, 140, 141, 0.4);
+            border-radius: 4px;
+            color: #3498db;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            animation: fade-in-down 0.8s ease;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 58px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #bdc3c7 0%, #ecf0f1 50%, #95a5a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            animation: fade-in-up 1s ease;
+            text-shadow: 0 0 30px rgba(189, 195, 199, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 19px;
+            font-weight: 600;
+            animation: fade-in-up 1.2s ease;
+            letter-spacing: 0.5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, rgba(52, 73, 94, 0.2), rgba(44, 62, 80, 0.3));
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(127, 140, 141, 0.3);
+            border-radius: 6px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fade-in-up 0.6s ease backwards;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(52, 152, 219, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+        
+        .card:hover::before {
+            left: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(52, 152, 219, 0.3),
+                inset 0 0 20px rgba(52, 152, 219, 0.05);
+            border-color: rgba(52, 152, 219, 0.5);
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-number {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            border: 2px solid rgba(52, 152, 219, 0.6);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #3498db;
+            flex-shrink: 0;
+            box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .card-title {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-title a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 22px;
+            font-weight: bold;
+            display: block;
+            transition: all 0.3s ease;
+            line-height: 1.3;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .card:hover .card-title a {
+            color: #3498db;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.3), rgba(52, 73, 94, 0.4));
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(127, 140, 141, 0.3);
+            border-radius: 6px;
+            animation: fade-in 1.5s ease;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-title {
+            color: #ecf0f1;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .footer-text {
+            color: #7f8c8d;
+            font-size: 15px;
+            margin-top: 8px;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .footer-author {
+            color: #3498db;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        @keyframes fade-in-down {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 38px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+            
+            .card-title a {
+                font-size: 20px;
+            }
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            .card {
+                opacity: 0;
+                animation: fade-in-up 0.6s ease forwards;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="badge">⚡ CHƯƠNG 2: NGÔN NGỮ HTML</div>
+            <h1>BÀI TẬP THIẾT KẾ<br>VÀ LẬP TRÌNH WEB</h1>
+            <p class="subtitle">Trường Đại học Bạc Liêu • Khoa Kỹ thuật và Công nghệ</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.1</div>
+                    <div class="card-title">
+                        <a href="ex01.htm">Du lịch Bạc Liêu</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.2</div>
+                    <div class="card-title">
+                        <a href="ex02.htm">Chương trình đào tạo CNTT</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.3</div>
+                    <div class="card-title">
+                        <a href="ex03.htm">Thông báo tuyển sinh</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.4</div>
+                    <div class="card-title">
+                        <a href="ex04.htm">Form đăng ký xét tuyển</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.5</div>
+                    <div class="card-title">
+                        <a href="ex05.htm">Phiếu đăng ký dự thi thể thao</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">2.6</div>
+                    <div class="card-title">
+                        <a href="ex06.htm">Bảng tiền thưởng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-title">⚡ TRƯỜNG ĐẠI HỌC BẠC LIÊU</p>
+            <p class="footer-text">Khoa Kỹ thuật và Công nghệ • Bài tập thực hành HTML cơ bản</p>
+            <p class="footer-author">Mai Quỳnh</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu đăng ký dự thi thể thao</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border: 3px solid #000;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .header-left p {
+            margin: 3px 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .header-right {
+            text-align: right;
+            font-size: 12px;
+        }
+        .header-right p {
+            margin: 3px 0;
+            font-weight: bold;
+        }
+        .title {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .title h1 {
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin: 15px 0;
+        }
+        .logo-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .logo-placeholder {
+            width: 150px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid #000;
+        }
+        .form-section {
+            margin: 30px 0;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .form-group label {
+            min-width: 100px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #000;
+        }
+        .sports-section {
+            margin: 25px 0;
+        }
+        .sports-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+        .checkbox-item label {
+            font-size: 15px;
+        }
+        .section-divider {
+            border-top: 2px solid #000;
+            margin: 40px 0;
+            padding-top: 25px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .equipment-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .select-box {
+            width: 250px;
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #000;
+        }
+        .warranty-section {
+            margin: 25px 0;
+        }
+        .warranty-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .warranty-select {
+            width: 200px;
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #000;
+        }
+        .button-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .button-section button {
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 15px;
+            cursor: pointer;
+            border: 2px solid #000;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .button-section button:hover {
+            background-color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <p>Đăng ký thể thao</p>
+                <p>TRƯỜNG ĐẠI HỌC BẠC LIÊU</p>
+                <p>KHOA KỸ THUẬT VÀ CÔNG NGHỆ</p>
+            </div>
+            <div class="header-right">
+                <p>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                <p>Độc lập - Tự do - Hạnh phúc</p>
+            </div>
+        </div>
+        
+        <div class="title">
+            <h1>PHIẾU ĐĂNG KÝ DỰ THI THỂ THAO</h1>
+        </div>
+        
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                TRƯỜNG ĐẠI HỌC<br>BẠC LIÊU<br>UNIVERSITY
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <div class="form-group">
+                <label>Họ tên:</label>
+                <input type="text" name="hoten" placeholder="Nhập họ tên">
+            </div>
+            
+            <div class="form-group">
+                <label>Mật khẩu:</label>
+                <input type="password" name="matkhau" placeholder="Nhập mật khẩu">
+            </div>
+        </div>
+        
+        <div class="sports-section">
+            <h3>Môn thể thao:</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="bongda" name="monthethao" value="bongda">
+                    <label for="bongda">Bóng đá</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="bongchuyen" name="monthethao" value="bongchuyen">
+                    <label for="bongchuyen">Bóng chuyền</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dienkinh" name="monthethao" value="dienkinh">
+                    <label for="dienkinh">Điền kinh</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="boiloi" name="monthethao" value="boiloi">
+                    <label for="boiloi">Bơi lội</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-divider">
+            <div class="section-title">PHẦN CUNG MÁY TÍNH</div>
+        </div>
+        
+        <div class="equipment-section">
+            <h3>Thiết bị:</h3>
+            <select class="select-box" size="4">
+                <option value="cpu">CPU</option>
+                <option value="mainboard">Mainboard</option>
+                <option value="asus">ASUS DVD</option>
+                <option value="ram">RAM KingMax</option>
+            </select>
+        </div>
+        
+        <div class="warranty-section">
+            <h3>Thời gian bảo hành:</h3>
+            <select class="warranty-select">
+                <option value="">-- Chọn --</option>
+                <option value="6">6 tháng</option>
+                <option value="12">12 tháng</option>
+                <option value="24">24 tháng</option>
+            </select>
+        </div>
+        
+        <div class="button-section">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </div>
+</body>
+</html>

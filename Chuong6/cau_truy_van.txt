@@ -1,0 +1,40 @@
+-- ==========================================
+-- Câu 1: Tạo bảng tồn kho
+-- ==========================================
+CREATE TABLE TONKHO (
+    mahang VARCHAR(4) PRIMARY KEY,
+    tenhang VARCHAR(40),
+    mansx VARCHAR(2),
+    namsx INT,
+    gia INT,
+    soluong INT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ==========================================
+-- Câu 2: Chèn 2 mẩu tin vào bảng TONKHO
+-- ==========================================
+INSERT INTO TONKHO (mahang, tenhang, mansx, namsx, gia, soluong) VALUES 
+('DE01', 'Dell Vostro', 'DE', 2015, 650, 20),
+('DE02', 'Del Inspiron', 'DE', 2015, 550, 30);
+
+-- ==========================================
+-- Câu 3: Cập nhật số điện thoại
+-- ==========================================
+UPDATE KHACHHANG 
+SET dienthoai = '0912131415' 
+WHERE makh = 'K007';
+
+-- ==========================================
+-- Câu 4: Xóa khách hàng có mã K010
+-- ==========================================
+-- Lưu ý: Nếu K010 đã có trong bảng HOADON,
+-- cần xóa ở HOADON trước do ràng buộc khóa ngoại.
+DELETE FROM KHACHHANG 
+WHERE makh = 'K010';
+
+-- ==========================================
+-- Câu 5: Hiển thị hàng hóa của nhà sản xuất "DELL"
+-- ==========================================
+SELECT HANGHOA.* FROM HANGHOA 
+INNER JOIN NHASANXUAT ON HANGHOA.mansx = NHASANXUAT.mansx 
+WHERE NHASANXUAT.tennsx = 'DELL';

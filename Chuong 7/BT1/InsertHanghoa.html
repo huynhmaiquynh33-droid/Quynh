@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thêm Hàng Hóa</title>
+  </head>
+  <body>
+    <h2>Thêm Hàng Hóa</h2>
+    <form action="InsertHanghoa.php" method="POST">
+      Mã hàng: <input type="text" name="mahang" /><br /><br />
+      Tên hàng: <input type="text" name="tenhang" /><br /><br />
+      Mã NSX:
+      <select name="mansx">
+        <option value="DE">DE - DELL</option>
+        <option value="AS">AS - ASUS</option>
+        <option value="LE">LE - LENOVO</option>
+        <option value="TO">TO - TOSHIBA</option></select
+      ><br /><br />
+      Năm SX: <input type="number" name="namsx" /><br /><br />
+      Giá: <input type="number" name="gia" /><br /><br />
+      <input type="submit" value="Thêm" />
+    </form>
+  </body>
+</html>

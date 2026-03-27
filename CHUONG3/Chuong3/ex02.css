@@ -1,0 +1,35 @@
+h1{
+    color: brown;
+    font: bolder;
+}
+
+p{
+    font-size: 14;
+    font-style: italic;
+    background-color: blue;
+    color: white;
+}
+div p{
+    font-size: 14;
+    font-style: italic;
+    background-color: black;
+    color: yellowgreen;
+}
+
+body {
+    width: 60%;
+    max-width: 800px;
+    margin: 50px auto;
+    
+    border: 5px double #333;
+    
+    /* 2. CHỈNH SỬA: Đây là màu nền BÊN TRONG khung */
+    background-color: #2a7699; 
+    
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    background-color: white; /* Hoặc #f0f0f0 (xám nhạt) nếu muốn thấy rõ khung */
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hiển thị Họ Tên</title>
+  </head>
+  <body>
+    <h2>Nhập thông tin</h2>
+
+    <!-- Textbox Họ -->
+    Họ:
+    <input type="text" name="Ho" value="Họ" /><br /><br />
+
+    <!-- Textbox Tên -->
+    Tên:
+    <input type="text" name="Ten" value="Tên" /><br /><br />
+
+    <!-- Nút hiển thị -->
+    <input
+      type="button"
+      name="Hienthi"
+      value="Hiển thị"
+      onclick="hienThiHoTen()"
+    /><br /><br />
+
+    <!-- Textbox kết quả -->
+    Họ và tên:
+    <input type="text" name="Hoten" value="Họ và tên" />
+
+    <script>
+      function hienThiHoTen() {
+        // Lấy giá trị từ 2 textbox
+        var ho = document.getElementsByName("Ho")[0].value;
+        var ten = document.getElementsByName("Ten")[0].value;
+
+        // Ghép họ và tên
+        var hoten = ho + " " + ten;
+
+        // Hiển thị vào textbox Hoten
+        document.getElementsByName("Hoten")[0].value = hoten;
+      }
+    </script>
+  </body>
+</html>

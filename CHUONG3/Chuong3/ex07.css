@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Bao quanh cả 2 cột để căn chỉnh */
+.wrapper {
+    display: flex; /* Sử dụng Flexbox để chia cột dễ dàng */
+    border: 1px solid #000;
+    width: 100%;
+    max-width: 900px; /* Giới hạn chiều rộng cho đẹp */
+    margin: 0 auto;
+}
+
+/* --- Cột trái (Menu) --- */
+.sidebar {
+    background-color: #333; /* Màu nền đen/xám tối */
+    width: 250px; /* Chiều rộng cố định */
+    display: flex;
+    flex-direction: column; /* Xếp link theo chiều dọc */
+    padding: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white; /* Chữ trắng */
+    padding: 10px 20px;
+    border-bottom: 1px solid #555; /* Đường kẻ mờ giữa các mục */
+    font-size: 14px;
+}
+
+.sidebar a:hover {
+    background-color: #555; /* Hiệu ứng khi di chuột vào */
+    text-decoration: underline;
+}
+
+/* --- Cột phải (Nội dung) --- */
+.content {
+    background-color: #ccc; /* Màu nền xám sáng */
+    flex-grow: 1; /* Tự động chiếm hết phần còn lại */
+    padding: 20px;
+    border-left: 1px solid #fff;
+}
+
+.content h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #666;
+}
+
+.content p {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    text-align: justify;
+}

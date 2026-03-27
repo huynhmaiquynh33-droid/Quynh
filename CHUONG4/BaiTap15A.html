@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo thay đổi thuộc tính</title>
+
+    <script>
+      function ThayDoi() {
+        // Lấy giá trị từ các textbox
+        var mauNen = document.getElementsByName("MauNen")[0].value;
+        var mauChu = document.getElementsByName("MauChu")[0].value;
+        var tieuDe = document.getElementsByName("TieuDe")[0].value;
+        var trangThai = document.getElementsByName("TrangThai")[0].value;
+
+        // Thay đổi thuộc tính
+        document.body.style.backgroundColor = mauNen; // màu nền
+        document.body.style.color = mauChu; // màu chữ
+        document.title = tieuDe; // tiêu đề tab
+
+        // Thanh trạng thái (trình duyệt cũ)
+        window.status = trangThai;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h2>Thay đổi thuộc tính trang</h2>
+
+    <!-- Các textbox -->
+    Màu nền: <input type="text" name="MauNen" value="blue" /><br /><br />
+    Màu chữ: <input type="text" name="MauChu" value="white" /><br /><br />
+    Tiêu đề:
+    <input type="text" name="TieuDe" value="Trang của tôi" /><br /><br />
+    Trạng thái:
+    <input type="text" name="TrangThai" value="Xin chào!" /><br /><br />
+
+    <!-- Nút -->
+    <input type="button" name="ThayDoi" value="Thay đổi" onclick="ThayDoi()" />
+  </body>
+</html>

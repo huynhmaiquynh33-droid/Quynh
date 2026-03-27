@@ -1,0 +1,89 @@
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px; /* Cách lề để dễ nhìn menu xổ ra */
+}
+
+ul {
+    list-style-type: none; /* Bỏ dấu chấm tròn đầu dòng */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; /* Bỏ gạch chân link */
+    color: white;
+    display: block; /* Để bấm được vào vùng rộng hơn chữ */
+    padding: 10px 20px;
+}
+
+/* --- MENU CẤP 1 (Ngang) --- */
+.main-menu {
+    background-color: #333; /* Màu nền đen */
+    display: inline-block; /* Ôm sát nội dung hoặc dùng width: 100% */
+}
+
+.main-menu > li {
+    float: left; /* Xếp các mục nằm ngang */
+    position: relative; /* Để làm điểm tựa cho menu con định vị */
+    border-right: 1px solid #555; /* Đường kẻ trắng mờ ngăn cách */
+}
+
+.main-menu > li:last-child {
+    border-right: none;
+}
+
+.main-menu > li > a:hover {
+    background-color: #111; /* Màu khi di chuột vào cấp 1 */
+}
+
+/* --- MENU CẤP 2 (Dọc) --- */
+.sub-menu {
+    display: none; /* Ẩn mặc định */
+    position: absolute; /* Định vị tuyệt đối so với thẻ li cha */
+    top: 100%; /* Nằm ngay dưới thẻ li cha */
+    left: 0;
+    width: 200px; /* Chiều rộng menu con */
+    background-color: #444;
+    z-index: 1000; /* Đảm bảo menu hiện đè lên nội dung khác */
+}
+
+.sub-menu > li {
+    border-bottom: 1px solid #555;
+    position: relative; /* Để làm điểm tựa cho menu cấp 3 */
+}
+
+/* Hiệu ứng: Khi di chuột vào Li cha thì hiện Menu con */
+.main-menu > li:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu > li > a:hover {
+    background-color: #666; /* Màu nền khi hover menu con */
+}
+
+/* --- MENU CẤP 3 (Ngang sang phải) --- */
+.sub-menu-2 {
+    display: none; /* Ẩn mặc định */
+    position: absolute;
+    top: 0; /* Ngang hàng với mục cha */
+    left: 100%; /* Nằm bên phải mục cha */
+    width: 220px;
+    background-color: #555; /* Màu nhạt hơn một chút */
+}
+
+/* Hiệu ứng: Khi di chuột vào Li cấp 2 thì hiện Menu cấp 3 */
+.sub-menu > li:hover > .sub-menu-2 {
+    display: block;
+}
+
+.sub-menu-2 > li > a:hover {
+    background-color: #777;
+}
+
+/* Xóa float sau khi kết thúc menu (Clearfix) */
+.main-menu::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,45 @@
+/* Yêu cầu: Body màu nền là vàng sáng */
+body {
+    background-color: #FFFFE0; /* LightYellow */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Yêu cầu: Tiêu đề màu chữ đỏ */
+h1, h2 {
+    color: red;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Yêu cầu: Danh sách có số thứ tự: Font Verdana, màu chữ là tím */
+.main-list {
+    font-family: Verdana, sans-serif;
+    color: purple;
+    font-weight: bold;
+}
+/* Reset lại màu cho thẻ h2 nằm trong danh sách để nó vẫn giữ màu đỏ */
+.main-list h2 {
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+
+/* Yêu cầu: Đoạn văn CSS là gì: Font Verdana, màu xanh lá */
+.description {
+    font-family: Verdana, sans-serif;
+    color: green;
+    font-weight: normal;
+    text-align: justify;
+}
+
+/* Yêu cầu: Danh sách dấu hoa thị: Font Time new Roman, màu chữ xanh dương */
+.sub-list {
+    font-family: "Times New Roman", serif;
+    color: blue;
+    font-size: 13pt;
+    font-weight: normal; /* Bỏ in đậm thừa kế từ danh sách cha */
+    list-style-type: disc;
+}
